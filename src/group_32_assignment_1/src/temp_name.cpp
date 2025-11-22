@@ -40,7 +40,6 @@ public:
       100ms, std::bind(&Navigation::on_timer, this));
 
     initial_pose_wrt_map.header.frame_id = "map";
-    goal_pose_wrt_map.header.frame_id = "map";
 
   }
 
@@ -48,7 +47,6 @@ private:
   void on_timer()
   {
     geometry_msgs::msg::PoseWithCoviarianceStamped initial_pose_wrt_map;
-    geometry_msgs::msg::PoseWithCoviarianceStamped goal_pose_wrt_map;
 
     geometry_msgs::msg::TransformStamped tf_robot_initpose_wrt_map;
     geometry_msgs::msg::TransformStamped tf_apriltag1_wrt_map;
@@ -56,7 +54,9 @@ private:
 
     try {
     tf_robot_initpose_wrt_map = tf_buffer_->lookupTransform("map", "base_link", tf2::TimePointZero);
-    } catch (const tf2::TransformException & ex) {
+    } 
+    catch (const tf2::TransformException & ex) 
+    {
     RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "base_link", "map", ex.what());
     return;
     }
@@ -96,7 +96,7 @@ private:
 
   
   geometry_msgs::msg::PoseWithCoviarianceStamped initial_pose_wrt_map;
-  geometry_msgs::msg::PoseWithCoviarianceStamped goal_pose_wrt_map;
+
 };
 
 int main(int argc, char * argv[])

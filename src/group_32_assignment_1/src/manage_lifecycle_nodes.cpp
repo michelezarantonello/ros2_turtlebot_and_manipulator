@@ -13,23 +13,37 @@ public:
     void send_request()
     {
         auto request = std::make_shared<nav2_msgs::srv::ManageLifecycleNodes::Request>();
-        // Set request->command as needed
+        request->command = nav2_msgs::srv::ManageLifecycleNodes::Request::STARTUP;
         
 
-        client_->wait_for_service();
+        localization_client_->wait_for_service();
         
-        auto result_future = client_->async_send_request(request);
-        if (rclcpp::spin_until_future_complete(shared_from_this(), result_future) ==
+        auto result_localization = localization_client_->async_send_request(request);
+        if (rclcpp::spin_until_future_complete(shared_from_this(), result_localization) ==
             rclcpp::FutureReturnCode::SUCCESS)
         {
-            RCLCPP_INFO(get_logger(), "Service call completed");
+            RCLCPP_INFO(get_logger(), "localization startup completed");
         }
         else
         {
-            RCLCPP_ERROR(get_logger(), "Service call failed");
+            RCLCPP_ERROR(get_logger(), "localization startup failed");
+        }
+
+        navigation_client_->wait_for_service();
+
+        auto result_navigation = navigation_client_->async_send_request(request);
+        if (rclcpp::spin_until_future_complete(shared_from_this(), result_navigation) ==
+            rclcpp::FutureReturnCode::SUCCESS)
+        {
+            RCLCPP_INFO(get_logger(), "navigation startup completed");
+        }
+        else
+        {
+            RCLCPP_ERROR(get_logger(), "navigation startup failed");
         }
     }
 
 private:
-    rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr client_;
+    rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr localization_client_;
+    rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr navigation_client_;
 };
