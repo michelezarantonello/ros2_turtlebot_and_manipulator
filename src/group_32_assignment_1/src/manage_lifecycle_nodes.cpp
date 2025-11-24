@@ -15,7 +15,7 @@ public:
         auto request = std::make_shared<nav2_msgs::srv::ManageLifecycleNodes::Request>();
         request->command = nav2_msgs::srv::ManageLifecycleNodes::Request::STARTUP;
         
-
+0
         localization_client_->wait_for_service();
         
         auto result_localization = localization_client_->async_send_request(request);
