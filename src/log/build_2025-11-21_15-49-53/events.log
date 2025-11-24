@@ -1,8 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000407] (-) JobUnselected: {'identifier': 'apriltag_ros'}
-[0.000444] (-) JobUnselected: {'identifier': 'group_32_assignment_1'}
-[0.000462] (-) JobUnselected: {'identifier': 'ir_base'}
-[0.000476] (-) JobUnselected: {'identifier': 'ir_desription'}
-[0.000489] (-) JobUnselected: {'identifier': 'ir_launch'}
-[0.000509] (-) JobUnselected: {'identifier': 'ir_movit_config'}
-[0.000870] (-) EventReactorShutdown: {}
