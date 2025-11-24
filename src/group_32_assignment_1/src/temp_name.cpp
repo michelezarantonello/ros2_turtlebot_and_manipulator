@@ -49,8 +49,7 @@ private:
     geometry_msgs::msg::PoseWithCoviarianceStamped initial_pose_wrt_map;
 
     geometry_msgs::msg::TransformStamped tf_robot_initpose_wrt_map;
-    geometry_msgs::msg::TransformStamped tf_apriltag1_wrt_map;
-    geometry_msgs::msg::TransformStamped tf_apriltag2_wrt_map;
+   
 
     try {
     tf_robot_initpose_wrt_map = tf_buffer_->lookupTransform("map", "base_link", tf2::TimePointZero);

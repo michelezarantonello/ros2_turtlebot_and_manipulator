@@ -1,0 +1,50 @@
+[0.039s] Invoking command in '/home/michele-zarantonello/ws_32_assignments/src/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/michele-zarantonello/ws_32_assignments/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/michele-zarantonello/ws_32_assignments/src/install/ir_launch
+[0.202s] -- The C compiler identification is GNU 13.3.0
+[0.396s] -- The CXX compiler identification is GNU 13.3.0
+[0.437s] -- Detecting C compiler ABI info
+[0.632s] -- Detecting C compiler ABI info - done
+[0.676s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.686s] -- Detecting C compile features
+[0.686s] -- Detecting C compile features - done
+[0.707s] -- Detecting CXX compiler ABI info
+[0.850s] -- Detecting CXX compiler ABI info - done
+[0.889s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.890s] -- Detecting CXX compile features
+[0.890s] -- Detecting CXX compile features - done
+[0.906s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.258s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.531s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.755s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.756s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.757s] -- Added test 'lint_cmake' to check CMake code style
+[1.758s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.760s] -- Added test 'xmllint' to check XML markup files
+[1.765s] -- Configuring done (1.7s)
+[1.769s] -- Generating done (0.0s)
+[1.776s] -- Build files have been written to: /home/michele-zarantonello/ws_32_assignments/src/build/ir_launch
+[1.795s] Invoked command in '/home/michele-zarantonello/ws_32_assignments/src/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/michele-zarantonello/ws_32_assignments/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/michele-zarantonello/ws_32_assignments/src/install/ir_launch
+[1.797s] Invoking command in '/home/michele-zarantonello/ws_32_assignments/src/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/ws_32_assignments/src/build/ir_launch -- -j8 -l8
+[1.867s] Invoked command in '/home/michele-zarantonello/ws_32_assignments/src/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/ws_32_assignments/src/build/ir_launch -- -j8 -l8
+[1.868s] Invoking command in '/home/michele-zarantonello/ws_32_assignments/src/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/ws_32_assignments/src/build/ir_launch
+[1.894s] -- Install configuration: ""
+[1.895s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ament_index/resource_index/package_run_dependencies/ir_launch
+[1.895s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ament_index/resource_index/parent_prefix_path/ir_launch
+[1.895s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/environment/ament_prefix_path.sh
+[1.895s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/environment/ament_prefix_path.dsv
+[1.896s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/environment/path.sh
+[1.896s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/environment/path.dsv
+[1.896s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/local_setup.bash
+[1.896s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/local_setup.sh
+[1.896s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/local_setup.zsh
+[1.897s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/local_setup.dsv
+[1.897s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/package.dsv
+[1.897s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ament_index/resource_index/packages/ir_launch
+[1.897s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/cmake/ir_launchConfig.cmake
+[1.898s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/cmake/ir_launchConfig-version.cmake
+[1.898s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/package.xml
+[1.898s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/launch
+[1.898s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/launch/assignment_2.launch.py
+[1.898s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/launch/exercise_4.launch.py
+[1.898s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/launch/assignment_1.launch.py
+[1.899s] -- Installing: /home/michele-zarantonello/ws_32_assignments/src/install/ir_launch/share/ir_launch/launch/spawn_tb3_launch.py
+[1.982s] Invoked command in '/home/michele-zarantonello/ws_32_assignments/src/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/ws_32_assignments/src/build/ir_launch

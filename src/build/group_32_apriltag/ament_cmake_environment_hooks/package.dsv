@@ -1,0 +1,4 @@
+source;share/group_32_apriltag/local_setup.bash
+source;share/group_32_apriltag/local_setup.dsv
+source;share/group_32_apriltag/local_setup.sh
+source;share/group_32_apriltag/local_setup.zsh
