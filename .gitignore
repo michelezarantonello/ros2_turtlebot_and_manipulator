@@ -1,3 +1,8 @@
-build/*
-install/*
-log/*
+# Ignore all build folders
+**/build/
+
+# Ignore all install folders
+**/install/
+
+# Ignore all log folders
+**/log/
