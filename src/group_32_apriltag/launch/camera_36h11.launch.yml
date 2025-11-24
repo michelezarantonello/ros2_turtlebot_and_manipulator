@@ -10,10 +10,6 @@ launch:
     name: apriltag_container
     namespace: ""
     composable_node:
-    - pkg: realsense2_camera
-      plugin: realsense2_camera::RealSenseNodeFactory
-      name: camera
-      namespace: camera
 
     - pkg: image_proc
       plugin: image_proc::RectifyNode
@@ -21,9 +17,9 @@ launch:
       namespace: camera
       remap:
       - from: image
-        to: /camera/camera/color/image_raw
+        to: /rgb_camera/image #MODIFIED
       - from: camera_info
-        to: /camera/camera/color/camera_info
+        to: /rgb_camera/camera_info  #MODIFIED
       extra_arg:
       - name: use_intra_process_comms
         value: "True"
@@ -36,10 +32,10 @@ launch:
       - from: /apriltag/image_rect
         to: /camera/image_rect
       - from: /camera/camera_info
-        to: /camera/camera/color/camera_info
+        to: /camera/camera_info #MODIFIED
 
       param:
-      - from: $(find-pkg-share apriltag_ros)/cfg/tags_36h11.yaml
+      - from: $(find-pkg-share group_32_apriltag)/cfg/tags_36h11.yaml #MODIFIED
 
       extra_arg:
       - name: use_intra_process_comms
