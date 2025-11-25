@@ -24,9 +24,13 @@ ament_target_dependencies(init_pose_publisher rclcpp geometry_msgs nav2_msgs tf2
 add_executable(nav2pose src/nav2pose.cpp)
 ament_target_dependencies(nav2pose rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs)  
 
+add_executable(manage_lifecycle_nodes src/manage_lifecycle_nodes.cpp)
+ament_target_dependencies(manage_lifecycle_nodes rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs)  
+
 install(TARGETS
   init_pose_publisher
   nav2pose
+  manage_lifecycle_nodes
   DESTINATION lib/${PROJECT_NAME}
 )
 
