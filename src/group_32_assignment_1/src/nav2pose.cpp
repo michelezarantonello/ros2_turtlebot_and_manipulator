@@ -34,15 +34,15 @@ public:
 
         try{tf_apriltag0_wrt_map = tf_buffer_->lookupTransform("map", "tag_0", tf2::TimePointZero);} 
         catch(const tf2::TransformException & ex){
-        RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "tag_0", "map", ex.what());
-        return;
+            RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "tag_0", "map", ex.what());
+            return;
         }
         apriltag0_pose_wrt_map.header.stamp = this->get_clock()->now();
         apriltag0_pose_wrt_map.header.frame_id = "map";
 
         apriltag0_pose_wrt_map.pose.position.x = tf_apriltag0_wrt_map.transform.translation.x;
         apriltag0_pose_wrt_map.pose.position.y = tf_apriltag0_wrt_map.transform.translation.y;
-        apriltag0_pose_wrt_map.pose.position.z = tf_apriltag0_wrt_map.transform.translation.z; 
+        apriltag0_pose_wrt_map.pose.position.z = tf_apriltag0_wrt_map.transform.translation.z;
 
         apriltag0_pose_wrt_map.pose.orientation.x = tf_apriltag0_wrt_map.transform.rotation.x;
         apriltag0_pose_wrt_map.pose.orientation.y = tf_apriltag0_wrt_map.transform.rotation.y;
@@ -52,15 +52,15 @@ public:
         
         try{tf_apriltag1_wrt_map = tf_buffer_->lookupTransform("map", "tag_1", tf2::TimePointZero);} 
         catch(const tf2::TransformException & ex){
-        RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "tag_1", "map", ex.what());
-        return;
+            RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "tag_1", "map", ex.what());
+            return;
         }
         apriltag1_pose_wrt_map.header.stamp = this->get_clock()->now();
         apriltag1_pose_wrt_map.header.frame_id = "map";
 
         apriltag1_pose_wrt_map.pose.position.x = tf_apriltag1_wrt_map.transform.translation.x;
         apriltag1_pose_wrt_map.pose.position.y = tf_apriltag1_wrt_map.transform.translation.y;
-        apriltag1_pose_wrt_map.pose.position.z = tf_apriltag1_wrt_map.transform.translation.z; 
+        apriltag1_pose_wrt_map.pose.position.z = tf_apriltag1_wrt_map.transform.translation.z;
 
         apriltag1_pose_wrt_map.pose.orientation.x = tf_apriltag1_wrt_map.transform.rotation.x;
         apriltag1_pose_wrt_map.pose.orientation.y = tf_apriltag1_wrt_map.transform.rotation.y;
@@ -77,28 +77,29 @@ public:
         goal_pose_wrt_map.pose.orientation.x = apriltag1_pose_wrt_map.pose.orientation.x;
         goal_pose_wrt_map.pose.orientation.y = apriltag1_pose_wrt_map.pose.orientation.y;
         goal_pose_wrt_map.pose.orientation.z = apriltag1_pose_wrt_map.pose.orientation.z;
-        goal_pose_wrt_map.pose.orientation.w = apriltag1_pose_wrt_map.pose.orientation.w;        
+        goal_pose_wrt_map.pose.orientation.w = apriltag1_pose_wrt_map.pose.orientation.w;
 
         auto goal_msg = NavigateToPoseAction::Goal();
 
         goal_msg.pose.header.frame_id = "map";
         goal_msg.pose.header.stamp = this->now();
 
-        goal_msg.pose.pose.position = goal_pose_wrt_map.pose.position; 
-        
+        goal_msg.pose.pose.position = goal_pose_wrt_map.pose.position;
+
         goal_msg.pose.pose.orientation = goal_pose_wrt_map.pose.orientation;
-        
+
         action_client_->wait_for_action_server();
-        
+
         auto send_goal_options = rclcpp_action::Client<NavigateToPoseAction>::SendGoalOptions();
 
         send_goal_options.feedback_callback = std::bind(&Nav2ActionClient::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
-        send_goal_options.goal_response_callback = std::bind(&Nav2ActionClient::goal_response_callback, this, std::placeholders::_1);
+        send_goal_options.goal_response_callback =
+            std::bind(&Nav2ActionClient::goal_response_callback, this, std::placeholders::_1);
+
         send_goal_options.result_callback = std::bind(&Nav2ActionClient::result_callback, this, std::placeholders::_1);
-        
+
         RCLCPP_INFO(this->get_logger(), "Sending goal to action server...");
         action_client_->async_send_goal(goal_msg, send_goal_options);
-        
     }
 
 private:
@@ -106,13 +107,15 @@ private:
     std::shared_ptr<tf2_ros::TransformListener> tf_listener_{nullptr};
     std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
 
-    void goal_response_callback(std::shared_future<GoalHandle::SharedPtr> future)
+    void goal_response_callback(rclcpp_action::ClientGoalHandle<NavigateToPoseAction>::SharedPtr goal_handle)
     {
-        auto goal_handle = future.get();
-        if (!goal_handle) {
-        RCLCPP_ERROR(this->get_logger(), "Goal rejected by action server");
-        } else {
-        RCLCPP_INFO(this->get_logger(), "Goal accepted by action server");
+        if (!goal_handle)
+        {
+            RCLCPP_ERROR(this->get_logger(), "Goal rejected by action server");
+        }
+        else
+        {
+            RCLCPP_INFO(this->get_logger(), "Goal accepted by action server");
         }
     }
 
@@ -139,3 +142,15 @@ private:
         }
     }
 };
+
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+
+    auto node = std::make_shared<Nav2ActionClient>();
+    node->send_goal(); // optionally call send_goal here
+    rclcpp::spin(node);
+
+    rclcpp::shutdown();
+    return 0;
+}
