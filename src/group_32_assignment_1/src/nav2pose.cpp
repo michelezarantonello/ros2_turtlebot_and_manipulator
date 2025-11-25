@@ -74,10 +74,10 @@ public:
         goal_pose_wrt_map.pose.position.y = (apriltag1_pose_wrt_map.pose.position.y + apriltag0_pose_wrt_map.pose.position.y)/2;
         goal_pose_wrt_map.pose.position.z = (apriltag1_pose_wrt_map.pose.position.z + apriltag0_pose_wrt_map.pose.position.z)/2;
         //random orientation---to fix
-        goal_pose_wrt_map.pose.orientation.x = apriltag1_pose_wrt_map.transform.rotation.x;
-        goal_pose_wrt_map.pose.orientation.y = apriltag1_pose_wrt_map.transform.rotation.y;
-        goal_pose_wrt_map.pose.orientation.z = apriltag1_pose_wrt_map.transform.rotation.z;
-        goal_pose_wrt_map.pose.orientation.w = apriltag1_pose_wrt_map.transform.rotation.w;        
+        goal_pose_wrt_map.pose.orientation.x = apriltag1_pose_wrt_map.pose.orientation.x;
+        goal_pose_wrt_map.pose.orientation.y = apriltag1_pose_wrt_map.pose.orientation.y;
+        goal_pose_wrt_map.pose.orientation.z = apriltag1_pose_wrt_map.pose.orientation.z;
+        goal_pose_wrt_map.pose.orientation.w = apriltag1_pose_wrt_map.pose.orientation.w;        
 
         auto goal_msg = NavigateToPoseAction::Goal();
 

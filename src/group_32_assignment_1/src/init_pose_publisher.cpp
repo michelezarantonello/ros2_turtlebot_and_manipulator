@@ -33,7 +33,7 @@ public:
     timer_ = this->create_wall_timer(
       1000ms, std::bind(&Navigation::on_timer, this));
 
-    initial_pose_wrt_map.header.frame_id = "map";
+    
 
   }
 
@@ -41,7 +41,7 @@ private:
   void on_timer()
   {
     geometry_msgs::msg::PoseWithCovarianceStamped initial_pose_wrt_map;
-
+    initial_pose_wrt_map.header.frame_id = "map";
     geometry_msgs::msg::TransformStamped tf_robot_initpose_wrt_map;
    
 
@@ -55,14 +55,14 @@ private:
     }
     initial_pose_wrt_map.header.stamp = this->get_clock()->now();
 
-    initial_pose_wrt_map.pose.position.x = tf_robot_initpose_wrt_map.transform.translation.x;
-    initial_pose_wrt_map.pose.position.y = tf_robot_initpose_wrt_map.transform.translation.y;
-    initial_pose_wrt_map.pose.position.z = tf_robot_initpose_wrt_map.transform.translation.z;
+    initial_pose_wrt_map.pose.pose.position.x = tf_robot_initpose_wrt_map.transform.translation.x;
+    initial_pose_wrt_map.pose.pose.position.y = tf_robot_initpose_wrt_map.transform.translation.y;
+    initial_pose_wrt_map.pose.pose.position.z = tf_robot_initpose_wrt_map.transform.translation.z;
 
-    initial_pose_wrt_map.pose.orientation.x = tf_robot_initpose_wrt_map.transform.rotation.x;
-    initial_pose_wrt_map.pose.orientation.y = tf_robot_initpose_wrt_map.transform.rotation.y;
-    initial_pose_wrt_map.pose.orientation.z = tf_robot_initpose_wrt_map.transform.rotation.z;
-    initial_pose_wrt_map.pose.orientation.w = tf_robot_initpose_wrt_map.transform.rotation.w;
+    initial_pose_wrt_map.pose.pose.orientation.x = tf_robot_initpose_wrt_map.transform.rotation.x;
+    initial_pose_wrt_map.pose.pose.orientation.y = tf_robot_initpose_wrt_map.transform.rotation.y;
+    initial_pose_wrt_map.pose.pose.orientation.z = tf_robot_initpose_wrt_map.transform.rotation.z;
+    initial_pose_wrt_map.pose.pose.orientation.w = tf_robot_initpose_wrt_map.transform.rotation.w;
 
     //covariance matrix -- almost random initialize -- llm values
     std::array<double, 36> covariance = {};
