@@ -14,10 +14,9 @@ public:
     {
         auto request = std::make_shared<nav2_msgs::srv::ManageLifecycleNodes::Request>();
         request->command = nav2_msgs::srv::ManageLifecycleNodes::Request::STARTUP;
-        
-0
+
         localization_client_->wait_for_service();
-        
+
         auto result_localization = localization_client_->async_send_request(request);
         if (rclcpp::spin_until_future_complete(shared_from_this(), result_localization) ==
             rclcpp::FutureReturnCode::SUCCESS)
@@ -47,3 +46,13 @@ private:
     rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr localization_client_;
     rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr navigation_client_;
 };
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+
+    auto node = std::make_shared<ManageLifecycleNodesClient>();
+    node->send_request();
+
+    rclcpp::shutdown();
+    return 0;
+}
