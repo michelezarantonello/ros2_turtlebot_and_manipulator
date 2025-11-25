@@ -1,9 +1,4 @@
-// publish on /initialpose
-//action client with action server=bt_navigator to go to desired position 
-//there must be a node (copy apriltag ros to group_32_ASSIGNMENT_1 and do stuff) that subscribes to /rgb_camera/image or something similar 
-//(in that topic there is what the camera sees - the two apriltags -). We need to subscribe to that node, calculate the position in the middle
-// of the two apriltags and then do a tf to see the point from the  map frame
-//need also to set manage_lifecycle_node.cpp ->i think we need to set initial/goal pose to make the navigation stack starts
+//node that publish to /initialpose
 #include <chrono>
 #include <functional>
 #include <memory>
@@ -12,12 +7,11 @@
 #include <array>
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "geometry_msgs/msg/pose_with_covariance_stamped.hpp"
-#include "geometry_msgs/msg/point.hpp"
-#include "nav_msgs/msg/path.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "tf2/exceptions.h"
 #include "tf2_ros/transform_listener.h"
 #include "tf2_ros/buffer.h"
+
 
 
 using namespace std::chrono_literals;
