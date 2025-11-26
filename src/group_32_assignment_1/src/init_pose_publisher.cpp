@@ -7,6 +7,7 @@
 #include <array>
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "geometry_msgs/msg/pose_with_covariance_stamped.hpp"
+#include "sensor_msgs/msg/camera_info.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "tf2/exceptions.h"
 #include "tf2_ros/transform_listener.h"
@@ -41,19 +42,22 @@ private:
   void on_timer()
   {
     geometry_msgs::msg::PoseWithCovarianceStamped initial_pose_wrt_map;
-    initial_pose_wrt_map.header.frame_id = "map";
     geometry_msgs::msg::TransformStamped tf_robot_initpose_wrt_map;
    
-
+    if (!tf_buffer_->canTransform("map", "base_link", tf2::TimePointZero)) {
+      RCLCPP_WARN(this->get_logger(), "TF map->base_link non available yet, waiting...");
+      return;
+    }
     try {
     tf_robot_initpose_wrt_map = tf_buffer_->lookupTransform("map", "base_link", tf2::TimePointZero);
     } 
     catch (const tf2::TransformException & ex) 
     {
-    RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "base_link", "map", ex.what());
-    return;
+      RCLCPP_WARN(this->get_logger(), "Could not transform %s to %s: %s", "base_link", "map", ex.what());
+      return;
     }
     initial_pose_wrt_map.header.stamp = this->get_clock()->now();
+    initial_pose_wrt_map.header.frame_id = "map";
 
     initial_pose_wrt_map.pose.pose.position.x = tf_robot_initpose_wrt_map.transform.translation.x;
     initial_pose_wrt_map.pose.pose.position.y = tf_robot_initpose_wrt_map.transform.translation.y;
