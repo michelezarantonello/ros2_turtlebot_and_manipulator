@@ -1,5 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch.launch_description_sources import AnyLaunchDescriptionSource
 from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
@@ -16,7 +17,7 @@ def generate_launch_description():
     apriltag_launch = os.path.join(
         get_package_share_directory('group_32_apriltag'),
         'launch',
-        'apriltag.launch.yml'
+        'apriltag.yml'
     )
 
     simulation = IncludeLaunchDescription(
@@ -24,7 +25,7 @@ def generate_launch_description():
     )
 
     camera_and_tags = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(apriltag_launch)
+        AnyLaunchDescriptionSource(apriltag_launch)
     )
 
     init_pose_publisher = Node(
