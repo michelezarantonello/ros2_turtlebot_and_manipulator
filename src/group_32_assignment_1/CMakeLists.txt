@@ -28,10 +28,14 @@ ament_target_dependencies(nav2pose rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rc
 add_executable(manage_lifecycle_nodes src/manage_lifecycle_nodes.cpp)
 ament_target_dependencies(manage_lifecycle_nodes rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs)  
 
+add_executable(table_detector src/table_detection.cpp)
+ament_target_dependencies(table_detector rclcpp sensor_msgs)
+
 install(TARGETS
   init_pose_publisher
   nav2pose
   manage_lifecycle_nodes
+  table_detector
   DESTINATION lib/${PROJECT_NAME}
 )
 
