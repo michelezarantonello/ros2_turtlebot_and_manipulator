@@ -29,10 +29,10 @@ launch:
       name: apriltag
       namespace: apriltag
       remap:
-      - from: /apriltag/image_rect
+      - from: image_rect
         to: /camera/image_rect
-      - from: /camera/camera_info
-        to: /camera/camera_info #MODIFIED
+      - from: camera_info
+        to: /rgb_camera/camera_info #MODIFIED
 
       param:
       - from: $(find-pkg-share group_32_apriltag)/cfg/tags_36h11.yaml #MODIFIED

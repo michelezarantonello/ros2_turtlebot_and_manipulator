@@ -16,7 +16,7 @@ def generate_launch_description():
     apriltag_launch = os.path.join(
         get_package_share_directory('group_32_apriltag'),
         'launch',
-        'apriltag.yml'
+        'apriltag.launch.yml'
     )
 
     simulation = IncludeLaunchDescription(
@@ -46,14 +46,9 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        # 1️⃣ Prima la simulazione
         simulation,
-
-        # 2️⃣ Poi la camera e AprilTag (quando TF esiste)
         TimerAction(period=5.0, actions=[ camera_and_tags ]),
-
-        # 3️⃣ Poi i tuoi nodi personali in ordine corretto
         TimerAction(period=12.0, actions=[ lifecycle_manager ]),
-        TimerAction(period=20.0, actions=[ init_pose_publisher ]),
+        TimerAction(period=18.0, actions=[ init_pose_publisher ]),
         TimerAction(period=22.0, actions=[ nav2_goal ]),
     ])
