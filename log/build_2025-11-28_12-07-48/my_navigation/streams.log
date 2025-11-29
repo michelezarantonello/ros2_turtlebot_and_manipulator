@@ -1,0 +1,52 @@
+[0.059s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[0.121s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.567s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.656s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.683s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.712s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.740s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.812s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.912s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.917s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.011s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.033s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.057s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.161s] -- Found nav2_msgs: 1.3.8 (/opt/ros/jazzy/share/nav2_msgs/cmake)
+[1.359s] -- Found tf2: 0.36.14 (/opt/ros/jazzy/share/tf2/cmake)
+[1.368s] -- Found tf2_ros: 0.36.14 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[1.506s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.537s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.637s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.637s] -- Configured cppcheck include dirs: 
+[1.637s] -- Configured cppcheck exclude dirs and/or files: 
+[1.638s] -- Added test 'lint_cmake' to check CMake code style
+[1.639s] -- Added test 'uncrustify' to check C / C++ code style
+[1.639s] -- Configured uncrustify additional arguments: 
+[1.639s] -- Added test 'xmllint' to check XML markup files
+[1.640s] -- Configuring done (1.5s)
+[1.657s] -- Generating done (0.0s)
+[1.665s] -- Build files have been written to: /home/michele-zarantonello/my_ws/build/my_navigation
+[1.710s] [ 50%] [32mBuilding CXX object CMakeFiles/manage_localization_nodes.dir/src/manage_localization_nodes.cpp.o[0m
+[5.441s] [100%] [32m[1mLinking CXX executable manage_localization_nodes[0m
+[5.688s] [100%] Built target manage_localization_nodes
+[5.703s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[5.704s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_navigation
+[5.713s] -- Install configuration: ""
+[5.713s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/manage_localization_nodes
+[5.714s] -- Set non-toolchain portion of runtime path of "/home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/manage_localization_nodes" to ""
+[5.714s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/package_run_dependencies/my_navigation
+[5.714s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/parent_prefix_path/my_navigation
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/ament_prefix_path.sh
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/ament_prefix_path.dsv
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/path.sh
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/path.dsv
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.bash
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.sh
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.zsh
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.dsv
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/package.dsv
+[5.715s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/packages/my_navigation
+[5.716s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/cmake/my_navigationConfig.cmake
+[5.716s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/cmake/my_navigationConfig-version.cmake
+[5.716s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/package.xml
+[5.717s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_navigation

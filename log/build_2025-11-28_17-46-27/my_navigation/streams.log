@@ -1,0 +1,31 @@
+[0.060s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[0.279s] [ 25%] Built target init_pose_publisher
+[0.279s] [ 50%] Built target manage_localization_nodes
+[0.279s] [ 75%] Built target manage_navigation_nodes
+[0.279s] [ 87%] [32mBuilding CXX object CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o[0m
+[6.706s] [100%] [32m[1mLinking CXX executable nav2pose[0m
+[7.028s] [100%] Built target nav2pose
+[7.045s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[7.046s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_navigation
+[7.057s] -- Install configuration: ""
+[7.057s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/init_pose_publisher
+[7.058s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/nav2pose
+[7.059s] -- Set non-toolchain portion of runtime path of "/home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/nav2pose" to ""
+[7.060s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/manage_localization_nodes
+[7.060s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/lib/my_navigation/manage_navigation_nodes
+[7.060s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/package_run_dependencies/my_navigation
+[7.060s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/parent_prefix_path/my_navigation
+[7.060s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/ament_prefix_path.sh
+[7.060s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/ament_prefix_path.dsv
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/path.sh
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/path.dsv
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.bash
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.sh
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.zsh
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.dsv
+[7.061s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/package.dsv
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/packages/my_navigation
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/cmake/my_navigationConfig.cmake
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/cmake/my_navigationConfig-version.cmake
+[7.061s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/package.xml
+[7.062s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_navigation

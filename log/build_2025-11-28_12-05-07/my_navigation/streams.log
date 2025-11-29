@@ -1,0 +1,47 @@
+[0.056s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation -DCMAKE_INSTALL_PREFIX=/home/michele-zarantonello/my_ws/install/my_navigation
+[0.253s] -- The C compiler identification is GNU 13.3.0
+[0.336s] -- The CXX compiler identification is GNU 13.3.0
+[0.370s] -- Detecting C compiler ABI info
+[0.501s] -- Detecting C compiler ABI info - done
+[0.513s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.513s] -- Detecting C compile features
+[0.514s] -- Detecting C compile features - done
+[0.523s] -- Detecting CXX compiler ABI info
+[0.699s] -- Detecting CXX compiler ABI info - done
+[0.717s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.717s] -- Detecting CXX compile features
+[0.717s] -- Detecting CXX compile features - done
+[0.723s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.901s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.047s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.188s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.189s] -- Configured cppcheck include dirs: 
+[1.189s] -- Configured cppcheck exclude dirs and/or files: 
+[1.190s] -- Added test 'lint_cmake' to check CMake code style
+[1.193s] -- Added test 'uncrustify' to check C / C++ code style
+[1.193s] -- Configured uncrustify additional arguments: 
+[1.195s] -- Added test 'xmllint' to check XML markup files
+[1.197s] -- Configuring done (1.1s)
+[1.201s] -- Generating done (0.0s)
+[1.204s] -- Build files have been written to: /home/michele-zarantonello/my_ws/build/my_navigation
+[1.211s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation -DCMAKE_INSTALL_PREFIX=/home/michele-zarantonello/my_ws/install/my_navigation
+[1.212s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[1.253s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[1.254s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_navigation
+[1.263s] -- Install configuration: ""
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/package_run_dependencies/my_navigation
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/parent_prefix_path/my_navigation
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/ament_prefix_path.sh
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/ament_prefix_path.dsv
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/path.sh
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/environment/path.dsv
+[1.264s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.bash
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.sh
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.zsh
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/local_setup.dsv
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/package.dsv
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/ament_index/resource_index/packages/my_navigation
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/cmake/my_navigationConfig.cmake
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/cmake/my_navigationConfig-version.cmake
+[1.265s] -- Installing: /home/michele-zarantonello/my_ws/install/my_navigation/share/my_navigation/package.xml
+[1.267s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_navigation

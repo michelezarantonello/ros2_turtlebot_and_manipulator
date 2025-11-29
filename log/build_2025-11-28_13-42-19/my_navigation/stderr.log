@@ -1,0 +1,17 @@
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In constructor ‘[01m[KNav2ActionClient::[01;32m[KNav2ActionClient[m[K()[m[K’:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:22:42:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""ms[m[K’
+   22 |         timer_ = this->create_wall_timer([01;31m[K1000ms[m[K, std::bind(&Navigation::on_timer, this));
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:22:61:[m[K [01;31m[Kerror: [m[K‘[01m[KNavigation[m[K’ has not been declared
+   22 |         timer_ = this->create_wall_timer(1000ms, std::bind(&[01;31m[KNavigation[m[K::on_timer, this));
+      |                                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In member function ‘[01m[Kvoid Nav2ActionClient::[01;32m[Ksend_goal[m[K()[m[K’:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:40:17:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
+   40 |                 [01;31m[K1s[m[K                        // timeout
+      |                 [01;31m[K^~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:74:17:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
+   74 |                 [01;31m[K1s[m[K                        // timeout
+      |                 [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/nav2pose.dir/build.make:76: CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/nav2pose.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

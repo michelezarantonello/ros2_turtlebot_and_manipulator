@@ -1,0 +1,35 @@
+[0.044s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_apriltag': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_apriltag -- -j8 -l8
+[0.269s] [ 20%] Built target conversion
+[0.271s] [ 40%] Built target tags
+[0.271s] [ 60%] Built target apriltag_node
+[0.271s] [ 80%] Built target pose_estimation
+[0.283s] [100%] Built target AprilTagNode
+[0.347s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_apriltag' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_apriltag -- -j8 -l8
+[0.350s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_apriltag': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_apriltag
+[0.365s] -- Install configuration: ""
+[0.366s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/lib/my_apriltag/apriltag_node
+[0.366s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/library_path.sh
+[0.366s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/library_path.dsv
+[0.366s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/lib/libAprilTagNode.so
+[0.367s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cfg
+[0.369s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cfg/qos_overrides.yaml
+[0.370s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cfg/tags_36h11.yaml
+[0.371s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/launch
+[0.371s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/launch/camera_36h11.launch.yml
+[0.371s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/package_run_dependencies/my_apriltag
+[0.372s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/parent_prefix_path/my_apriltag
+[0.372s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/ament_prefix_path.sh
+[0.373s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/ament_prefix_path.dsv
+[0.373s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/path.sh
+[0.373s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/path.dsv
+[0.373s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.bash
+[0.374s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.sh
+[0.374s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.zsh
+[0.374s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.dsv
+[0.374s] -- Installing: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/package.dsv
+[0.375s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/packages/my_apriltag
+[0.375s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/rclcpp_components/my_apriltag
+[0.375s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cmake/my_apriltagConfig.cmake
+[0.376s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cmake/my_apriltagConfig-version.cmake
+[0.376s] -- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/package.xml
+[0.435s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_apriltag' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/my_apriltag

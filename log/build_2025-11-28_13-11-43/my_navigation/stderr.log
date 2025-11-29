@@ -1,0 +1,126 @@
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:10:34:[m[K [01;31m[Kerror: [m[K‘[01m[Knav2_msgs[m[K’ does not name a type
+   10 |     using NavigateToPoseAction = [01;31m[Knav2_msgs[m[K::action::NavigateToPose;
+      |                                  [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:11:24:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp_action[m[K’ does not name a type
+   11 |     using GoalHandle = [01;31m[Krclcpp_action[m[K::ClientGoalHandle<NavigateToPoseAction>;
+      |                        [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:102:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp_action[m[K’ does not name a type
+  102 |     [01;31m[Krclcpp_action[m[K::Client<NavigateToPoseAction>::SharedPtr action_client_;
+      |     [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:106:33:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp_action[m[K’ has not been declared
+  106 |     void goal_response_callback([01;31m[Krclcpp_action[m[K::ClientGoalHandle<NavigateToPoseAction>::SharedPtr goal_handle)
+      |                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:106:64:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+  106 |     void goal_response_callback(rclcpp_action::ClientGoalHandle[01;31m[K<[m[KNavigateToPoseAction>::SharedPtr goal_handle)
+      |                                                                [01;31m[K^[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:28:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandle[m[K’ has not been declared
+  118 |     void feedback_callback([01;31m[KGoalHandle[m[K::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction::Feedback> feedback)
+      |                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:100:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction[01;31m[K::[m[KFeedback> feedback)
+      |                                                                                                    [01;31m[K^~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:110:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction::Feedback[01;31m[K>[m[K feedback)
+      |                                                                                                              [01;31m[K^[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:100:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction[01;31m[K::[m[KFeedback> feedback)
+      |                                                                                                    [01;31m[K^~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:110:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction::Feedback[01;31m[K>[m[K feedback)
+      |                                                                                                              [01;31m[K^[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:100:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction[01;31m[K::[m[KFeedback> feedback)
+      |                                                                                                    [01;31m[K^~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:110:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction::Feedback[01;31m[K>[m[K feedback)
+      |                                                                                                              [01;31m[K^[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:58:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const [01;31m[Kstd[m[K::shared_ptr<const NavigateToPoseAction::Feedback> feedback)
+      |                                                          [01;31m[K^~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:100:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<const NavigateToPoseAction[01;31m[K::[m[KFeedback> feedback)
+      |                                                                                                    [01;31m[K^~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:74:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kconst[m[K’
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  const std::shared_ptr<[01;31m[Kconst[m[K NavigateToPoseAction::Feedback> feedback)
+      |                                                                          [01;31m[K^~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:74:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K>[m[K’ before ‘[01m[Kconst[m[K’
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:52:[m[K [01;31m[Kerror: [m[Kmissing template argument list after ‘[01m[Kstd::shared_ptr[m[K’; template placeholder not permitted in parameter
+  118 |     void feedback_callback(GoalHandle::SharedPtr,  [01;31m[Kconst[m[K std::shared_ptr<const NavigateToPoseAction::Feedback> feedback)
+      |                                                    [01;31m[K^~~~~[m[K
+      |                                                         [32m[K<>[m[K
+In file included from [01m[K/usr/include/c++/13/bits/shared_ptr.h:53[m[K,
+                 from [01m[K/usr/include/c++/13/memory:80[m[K,
+                 from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:13[m[K,
+                 from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7[m[K,
+                 from [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:1[m[K:
+[01m[K/usr/include/c++/13/bits/shared_ptr_base.h:395:11:[m[K [01;36m[Knote: [m[K‘[01m[Ktemplate<class _Tp> class std::shared_ptr[m[K’ declared here
+  395 |     class [01;36m[Kshared_ptr[m[K;
+      |           [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:123:32:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandle[m[K’ does not name a type
+  123 |     void result_callback(const [01;31m[KGoalHandle[m[K::WrappedResult & result)
+      |                                [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:123:58:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  123 |     void result_callback(const GoalHandle::WrappedResult [01;31m[K&[m[K result)
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:123:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  123 |     void result_callback[34m[K([m[Kconst GoalHandle::WrappedResult[01;31m[K [m[K[32m[K&[m[K result)
+      |                         [34m[K~[m[K                               [01;31m[K^[m[K[32m[K~[m[K
+      |                                                         [32m[K)[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:123:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  123 |     void result_callback(const GoalHandle::WrappedResult [01;31m[K&[m[K result)
+      |                                                          [01;31m[K^[m[K
+      |                                                           [32m[K;[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:123:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult[m[K’ does not name a type
+  123 |     void result_callback(const GoalHandle::WrappedResult & [01;31m[Kresult[m[K)
+      |                                                            [01;31m[K^~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In constructor ‘[01m[KNav2ActionClient::[01;32m[KNav2ActionClient[m[K()[m[K’:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kaction_client_[m[K’ was not declared in this scope
+   15 |         [01;31m[Kaction_client_[m[K = rclcpp_action::create_client<NavigateToPoseAction>(this, "navigate_to_pose");
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:15:26:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp_action[m[K’ has not been declared
+   15 |         action_client_ = [01;31m[Krclcpp_action[m[K::create_client<NavigateToPoseAction>(this, "navigate_to_pose");
+      |                          [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:15:55:[m[K [01;31m[Kerror: [m[K‘[01m[KNavigateToPoseAction[m[K’ was not declared in this scope
+   15 |         action_client_ = rclcpp_action::create_client<[01;31m[KNavigateToPoseAction[m[K>(this, "navigate_to_pose");
+      |                                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:15:77:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+   15 |         action_client_ = rclcpp_action::create_client<NavigateToPoseAction>([01;35m[Kthis[m[K, "navigate_to_pose");
+      |                                                                             [01;35m[K^~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In member function ‘[01m[Kvoid Nav2ActionClient::[01;32m[Ksend_goal[m[K()[m[K’:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:78:25:[m[K [01;31m[Kerror: [m[K‘[01m[KNavigateToPoseAction[m[K’ has not been declared
+   78 |         auto goal_msg = [01;31m[KNavigateToPoseAction[m[K::Goal();
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:87:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kaction_client_[m[K’ was not declared in this scope
+   87 |         [01;31m[Kaction_client_[m[K->wait_for_action_server();
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:89:34:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp_action[m[K’ has not been declared
+   89 |         auto send_goal_options = [01;31m[Krclcpp_action[m[K::Client<NavigateToPoseAction>::SendGoalOptions();
+      |                                  [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:89:56:[m[K [01;31m[Kerror: [m[K‘[01m[KNavigateToPoseAction[m[K’ was not declared in this scope
+   89 |         auto send_goal_options = rclcpp_action::Client<[01;31m[KNavigateToPoseAction[m[K>::SendGoalOptions();
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:89:79:[m[K [01;31m[Kerror: [m[K‘[01m[K::SendGoalOptions[m[K’ has not been declared; did you mean ‘[01m[Ksend_goal_options[m[K’?
+   89 |         auto send_goal_options = rclcpp_action::Client<NavigateToPoseAction>::[01;31m[KSendGoalOptions[m[K();
+      |                                                                               [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                                                               [32m[Ksend_goal_options[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In member function ‘[01m[Kvoid Nav2ActionClient::[01;32m[Kgoal_response_callback[m[K(int)[m[K’:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:108:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kgoal_handle[m[K’ was not declared in this scope
+  108 |         if (![01;31m[Kgoal_handle[m[K)
+      |              [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:106:48:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KClientGoalHandle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  106 |     void goal_response_callback([01;35m[Krclcpp_action::ClientGoalHandle[m[K<NavigateToPoseAction>::SharedPtr goal_handle)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/tf2/tf2/buffer_core.hpp:50[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.hpp:40[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:35[m[K,
+                 from [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:4[m[K:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In member function ‘[01m[Kvoid Nav2ActionClient::[01;32m[Kfeedback_callback[m[K(...)[m[K’:
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:120:101:[m[K [01;31m[Kerror: [m[K‘[01m[Kfeedback[m[K’ was not declared in this scope
+  120 |         RCLCPP_INFO(this->get_logger(),  "Navigation feedback received: distance_remaining = %.2f", [01;31m[Kfeedback[m[K->distance_remaining);
+      |                                                                                                     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:118:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KSharedPtr[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  118 |     void feedback_callback([01;35m[KGoalHandle::SharedPtr[m[K,  const std::shared_ptr<const NavigateToPoseAction::Feedback> feedback)
+      |                            [01;35m[K~~~~~~~~~~~~^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/nav2pose.dir/build.make:76: CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/nav2pose.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

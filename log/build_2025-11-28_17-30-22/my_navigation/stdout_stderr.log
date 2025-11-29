@@ -1,0 +1,11 @@
+[ 25%] Built target init_pose_publisher
+[ 50%] Built target manage_navigation_nodes
+[ 75%] Built target manage_localization_nodes
+[ 87%] [32mBuilding CXX object CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o[0m
+[100%] [32m[1mLinking CXX executable nav2pose[0m
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/nav2pose.dir/build.make:230: nav2pose] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/nav2pose.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

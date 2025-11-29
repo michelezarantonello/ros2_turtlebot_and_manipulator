@@ -1,0 +1,31 @@
+[ 20%] Built target tags
+[ 40%] Built target conversion
+[ 60%] Built target apriltag_node
+[ 80%] Built target pose_estimation
+[100%] Built target AprilTagNode
+-- Install configuration: ""
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/lib/my_apriltag/apriltag_node
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/library_path.sh
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/library_path.dsv
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/lib/libAprilTagNode.so
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cfg
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cfg/qos_overrides.yaml
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cfg/tags_36h11.yaml
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/launch
+-- Installing: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/launch/camera_36h11.launch.yml
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/package_run_dependencies/my_apriltag
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/parent_prefix_path/my_apriltag
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/ament_prefix_path.sh
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/path.sh
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/environment/path.dsv
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.bash
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.sh
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.zsh
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/local_setup.dsv
+-- Installing: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/package.dsv
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/packages/my_apriltag
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/ament_index/resource_index/rclcpp_components/my_apriltag
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cmake/my_apriltagConfig.cmake
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/cmake/my_apriltagConfig-version.cmake
+-- Up-to-date: /home/michele-zarantonello/my_ws/install/my_apriltag/share/my_apriltag/package.xml

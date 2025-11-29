@@ -1,0 +1,16 @@
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/launch/my_launch.launch.py
+/home/michele-zarantonello/my_ws/install/my_launch/share/ament_index/resource_index/package_run_dependencies/my_launch
+/home/michele-zarantonello/my_ws/install/my_launch/share/ament_index/resource_index/parent_prefix_path/my_launch
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/environment/ament_prefix_path.sh
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/environment/ament_prefix_path.dsv
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/environment/path.sh
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/environment/path.dsv
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/local_setup.bash
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/local_setup.sh
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/local_setup.zsh
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/local_setup.dsv
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/package.dsv
+/home/michele-zarantonello/my_ws/install/my_launch/share/ament_index/resource_index/packages/my_launch
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/cmake/my_launchConfig.cmake
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/cmake/my_launchConfig-version.cmake
+/home/michele-zarantonello/my_ws/install/my_launch/share/my_launch/package.xml

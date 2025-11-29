@@ -1,0 +1,15 @@
+/home/michele-zarantonello/my_ws/install/assignment_1/share/ament_index/resource_index/package_run_dependencies/assignment_1
+/home/michele-zarantonello/my_ws/install/assignment_1/share/ament_index/resource_index/parent_prefix_path/assignment_1
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/environment/ament_prefix_path.sh
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/environment/ament_prefix_path.dsv
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/environment/path.sh
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/environment/path.dsv
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/local_setup.bash
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/local_setup.sh
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/local_setup.zsh
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/local_setup.dsv
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/package.dsv
+/home/michele-zarantonello/my_ws/install/assignment_1/share/ament_index/resource_index/packages/assignment_1
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/cmake/assignment_1Config.cmake
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/cmake/assignment_1Config-version.cmake
+/home/michele-zarantonello/my_ws/install/assignment_1/share/assignment_1/package.xml

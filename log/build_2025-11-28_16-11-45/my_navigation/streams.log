@@ -1,0 +1,16 @@
+[0.053s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[0.261s] [ 25%] Built target manage_localization_nodes
+[0.261s] [ 50%] Built target manage_navigation_nodes
+[0.261s] [ 75%] Built target init_pose_publisher
+[0.261s] [ 87%] [32mBuilding CXX object CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o[0m
+[3.417s] [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In member function ‘[01m[Kvoid Nav2ActionClient::[01;32m[Ksend_goal[m[K()[m[K’:
+[3.417s] [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:43:13:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
+[3.417s]    43 |             [01;31m[K1s[m[K                        // timeout
+[3.417s]       |             [01;31m[K^~[m[K
+[3.418s] [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:69:13:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
+[3.419s]    69 |             [01;31m[K1s[m[K                        // timeout
+[3.419s]       |             [01;31m[K^~[m[K
+[5.314s] gmake[2]: *** [CMakeFiles/nav2pose.dir/build.make:76: CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o] Error 1
+[5.314s] gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/nav2pose.dir/all] Error 2
+[5.314s] gmake: *** [Makefile:146: all] Error 2
+[5.316s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8

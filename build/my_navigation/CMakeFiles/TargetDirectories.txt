@@ -1,0 +1,13 @@
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/uninstall.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/my_navigation_uninstall.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/init_pose_publisher.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/manage_localization_nodes.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/manage_navigation_nodes.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/nav2pose.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/test.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/edit_cache.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/rebuild_cache.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/list_install_components.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/install.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/install/local.dir
+/home/michele-zarantonello/my_ws/build/my_navigation/CMakeFiles/install/strip.dir

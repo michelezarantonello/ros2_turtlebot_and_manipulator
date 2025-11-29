@@ -1,0 +1,17 @@
+[0.057s] Invoking command in '/home/michele-zarantonello/my_ws/build/my_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
+[0.263s] [ 50%] Built target init_pose_publisher
+[0.264s] [ 50%] Built target manage_navigation_nodes
+[0.267s] [ 87%] [32mBuilding CXX object CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o[0m
+[0.267s] [ 87%] Built target manage_localization_nodes
+[3.547s] [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:[m[K In member function ‘[01m[Kvoid Nav2ActionClient::[01;32m[Kfeedback_callback[m[K(rclcpp_action::ClientGoalHandle<nav2_msgs::action::NavigateToPose>::SharedPtr, std::shared_ptr<const nav2_msgs::action::NavigateToPose_Feedback_<std::allocator<void> > >)[m[K’:
+[3.547s] [01m[K/home/michele-zarantonello/my_ws/src/my_assignment_1/my_navigation/src/nav2pose.cpp:40:87:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfeedback[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[3.548s]    40 |                           [01;35m[Kconst std::shared_ptr<const NavigateToPoseAction::Feedback> feedback[m[K)
+[3.548s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[4.625s] [100%] [32m[1mLinking CXX executable nav2pose[0m
+[5.660s] /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+[5.660s] (.text+0x1b): undefined reference to `main'
+[5.669s] collect2: error: ld returned 1 exit status
+[5.671s] gmake[2]: *** [CMakeFiles/nav2pose.dir/build.make:230: nav2pose] Error 1
+[5.671s] gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/nav2pose.dir/all] Error 2
+[5.671s] gmake: *** [Makefile:146: all] Error 2
+[5.674s] Invoked command in '/home/michele-zarantonello/my_ws/build/my_navigation' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/my_navigation -- -j8 -l8
