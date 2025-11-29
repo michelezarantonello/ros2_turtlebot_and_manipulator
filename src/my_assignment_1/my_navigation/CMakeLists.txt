@@ -29,13 +29,17 @@ add_executable(manage_navigation_nodes src/manage_navigation_nodes.cpp)
 ament_target_dependencies(manage_navigation_nodes rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs) 
 
 add_executable(nav2pose src/nav2pose.cpp)
-ament_target_dependencies(nav2pose rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs)  
+ament_target_dependencies(nav2pose rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs) 
+
+add_executable(table_detection src/table_detection.cpp)
+ament_target_dependencies(table_detection rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs sensor_msgs)  
 
 install(TARGETS
   init_pose_publisher
   nav2pose
   manage_localization_nodes
   manage_navigation_nodes
+  table_detection
   DESTINATION lib/${PROJECT_NAME}
 )
 

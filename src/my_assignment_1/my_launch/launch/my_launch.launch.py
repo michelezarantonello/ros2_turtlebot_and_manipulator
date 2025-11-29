@@ -50,12 +50,18 @@ def generate_launch_description():
         executable='nav2pose',
         name='nav2pose'
     )
+ #   tab_det = Node(
+ #       package='my_navigation',
+ #       executable='table_detection',
+ #       name='table_detection'
+ #   )
 
     return LaunchDescription([
         simulation,
-        TimerAction(period=10.0, actions=[ camera_and_tags ]),
+        TimerAction(period=13.0, actions=[ camera_and_tags ]),
         TimerAction(period=30.0, actions=[ localization_manager ]),
         TimerAction(period=44.0, actions=[ init_pose_publisher ]),
         TimerAction(period=66.0, actions=[ navigation_manager ]),
         TimerAction(period=90.0, actions=[ nav2_goal ]),
+     #   TimerAction(period=90.0, actions=[ tab_det ])
     ])
