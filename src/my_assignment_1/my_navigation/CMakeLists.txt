@@ -15,6 +15,7 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -32,7 +33,7 @@ add_executable(nav2pose src/nav2pose.cpp)
 ament_target_dependencies(nav2pose rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs) 
 
 add_executable(table_detection src/table_detection.cpp)
-ament_target_dependencies(table_detection rclcpp geometry_msgs nav2_msgs tf2 tf2_ros rclcpp_action std_msgs sensor_msgs)  
+ament_target_dependencies(table_detection rclcpp geometry_msgs nav2_msgs tf2 tf2_ros tf2_geometry_msgs std_msgs sensor_msgs)  
 
 install(TARGETS
   init_pose_publisher
