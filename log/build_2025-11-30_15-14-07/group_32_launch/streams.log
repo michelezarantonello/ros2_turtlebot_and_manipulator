@@ -1,0 +1,47 @@
+[0.035s] Invoking command in '/home/michele-zarantonello/my_ws/build/group_32_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/michele-zarantonello/my_ws/src/ws_group_32_assignments/group_32_launch -DCMAKE_INSTALL_PREFIX=/home/michele-zarantonello/my_ws/install/group_32_launch
+[0.243s] -- The C compiler identification is GNU 13.3.0
+[0.396s] -- The CXX compiler identification is GNU 13.3.0
+[0.440s] -- Detecting C compiler ABI info
+[0.616s] -- Detecting C compiler ABI info - done
+[0.641s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.641s] -- Detecting C compile features
+[0.643s] -- Detecting C compile features - done
+[0.655s] -- Detecting CXX compiler ABI info
+[0.801s] -- Detecting CXX compiler ABI info - done
+[0.822s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.822s] -- Detecting CXX compile features
+[0.823s] -- Detecting CXX compile features - done
+[0.830s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.129s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.357s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.554s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.554s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.556s] -- Added test 'lint_cmake' to check CMake code style
+[1.557s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.559s] -- Added test 'xmllint' to check XML markup files
+[1.562s] -- Configuring done (1.5s)
+[1.567s] -- Generating done (0.0s)
+[1.570s] -- Build files have been written to: /home/michele-zarantonello/my_ws/build/group_32_launch
+[1.577s] Invoked command in '/home/michele-zarantonello/my_ws/build/group_32_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/michele-zarantonello/my_ws/src/ws_group_32_assignments/group_32_launch -DCMAKE_INSTALL_PREFIX=/home/michele-zarantonello/my_ws/install/group_32_launch
+[1.578s] Invoking command in '/home/michele-zarantonello/my_ws/build/group_32_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/group_32_launch -- -j8 -l8
+[1.631s] Invoked command in '/home/michele-zarantonello/my_ws/build/group_32_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/michele-zarantonello/my_ws/build/group_32_launch -- -j8 -l8
+[1.633s] Invoking command in '/home/michele-zarantonello/my_ws/build/group_32_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/group_32_launch
+[1.641s] -- Install configuration: ""
+[1.641s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/launch
+[1.642s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/launch/my_launch.launch.py
+[1.642s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/ament_index/resource_index/package_run_dependencies/group_32_launch
+[1.642s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/ament_index/resource_index/parent_prefix_path/group_32_launch
+[1.642s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/ament_prefix_path.sh
+[1.642s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/ament_prefix_path.dsv
+[1.642s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/path.sh
+[1.643s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/path.dsv
+[1.643s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.bash
+[1.643s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.sh
+[1.643s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.zsh
+[1.643s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.dsv
+[1.644s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/package.dsv
+[1.644s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/ament_index/resource_index/packages/group_32_launch
+[1.644s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/cmake/group_32_launchConfig.cmake
+[1.644s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/cmake/group_32_launchConfig-version.cmake
+[1.644s] -- Installing: /home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/package.xml
+[1.646s] Invoked command in '/home/michele-zarantonello/my_ws/build/group_32_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/michele-zarantonello/my_ws/build/group_32_launch

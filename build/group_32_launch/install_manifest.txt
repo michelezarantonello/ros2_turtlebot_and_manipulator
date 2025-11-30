@@ -1,0 +1,16 @@
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/launch/my_launch.launch.py
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/ament_index/resource_index/package_run_dependencies/group_32_launch
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/ament_index/resource_index/parent_prefix_path/group_32_launch
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/ament_prefix_path.sh
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/ament_prefix_path.dsv
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/path.sh
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/environment/path.dsv
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.bash
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.sh
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.zsh
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/local_setup.dsv
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/package.dsv
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/ament_index/resource_index/packages/group_32_launch
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/cmake/group_32_launchConfig.cmake
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/cmake/group_32_launchConfig-version.cmake
+/home/michele-zarantonello/my_ws/install/group_32_launch/share/group_32_launch/package.xml

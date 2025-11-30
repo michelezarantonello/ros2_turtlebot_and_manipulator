@@ -1,0 +1,3 @@
+source;share/group_32_apriltag/environment/ament_prefix_path.sh
+source;share/group_32_apriltag/environment/library_path.sh
+source;share/group_32_apriltag/environment/path.sh
