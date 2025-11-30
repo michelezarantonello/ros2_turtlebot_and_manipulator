@@ -1,5 +1,0 @@
-[ 50%] Built target init_pose_publisher
-[ 50%] Built target manage_navigation_nodes
-[ 87%] [32mBuilding CXX object CMakeFiles/nav2pose.dir/src/nav2pose.cpp.o[0m
-[ 87%] Built target manage_localization_nodes
-[100%] [32m[1mLinking CXX executable nav2pose[0m
