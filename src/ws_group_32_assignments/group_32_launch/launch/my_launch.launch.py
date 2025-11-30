@@ -55,8 +55,7 @@ def generate_launch_description():
     tab_det = Node(
         package='group_32_navigation',
         executable='table_detection',
-        name='table_detection',
-        output='screen'
+        name='table_detection'
     )
  
 
@@ -66,6 +65,6 @@ def generate_launch_description():
         TimerAction(period=30.0, actions=[ localization_manager ]),
         TimerAction(period=44.0, actions=[ init_pose_publisher ]),
         TimerAction(period=66.0, actions=[ navigation_manager ]),
-        TimerAction(period=90.0, actions=[ nav2_goal ])
-     #   TimerAction(period=90.0, actions=[ tab_det ])
+        TimerAction(period=90.0, actions=[ nav2_goal ]),
+        TimerAction(period=130.0, actions=[ tab_det ])
     ])  

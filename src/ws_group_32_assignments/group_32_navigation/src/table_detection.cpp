@@ -44,8 +44,6 @@ private:
       int start_table_index = 0;
       int end_table_index = 0;
       std::vector<std::pair<double, double>> table_centers;
-      
-      RCLCPP_INFO(this->get_logger(), "\n"); // New line for better readability in the console
 
       for (size_t i = 1; i < laser_msg->ranges.size(); ++i)
       {
