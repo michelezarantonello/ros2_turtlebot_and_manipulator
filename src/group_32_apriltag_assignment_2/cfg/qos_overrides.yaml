@@ -1,0 +1,9 @@
+/**:
+  ros__parameters:
+    qos_overrides:
+      /rgb_camera/camera_info:
+        subscription:
+          durability: volatile
+      /rgb_camera/image:
+        subscription:
+          durability: volatiles
