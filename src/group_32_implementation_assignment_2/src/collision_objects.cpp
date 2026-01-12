@@ -66,7 +66,8 @@ private:
         pose_cube1.position.x = tf_cube1_pose_wrt_base_link.transform.translation.x;
         pose_cube1.position.y = tf_cube1_pose_wrt_base_link.transform.translation.y;
         pose_cube1.position.z = tf_cube1_pose_wrt_base_link.transform.translation.z;
-        pose_cube1.position.z -= 0.03;
+        pose_cube1.position.x += 0.03; //by trial and error
+        pose_cube1.position.z -= 0.05;
 
         cube1.primitives.push_back(primitive);
         cube1.primitive_poses.push_back(pose_cube1);
@@ -101,7 +102,9 @@ private:
         pose_cube10.position.x = tf_cube10_pose_wrt_base_link.transform.translation.x;
         pose_cube10.position.y = tf_cube10_pose_wrt_base_link.transform.translation.y;
         pose_cube10.position.z = tf_cube10_pose_wrt_base_link.transform.translation.z;
-        pose_cube10.position.z -= 0.03;
+        pose_cube10.position.x += 0.03; //trial and error
+        pose_cube10.position.y += 0.01;
+        pose_cube10.position.z -= 0.05;
 
         cube10.primitives.push_back(primitive);
         cube10.primitive_poses.push_back(pose_cube10);
@@ -110,6 +113,18 @@ private:
         planning_scene_interface_.applyCollisionObject(cube10);
 
         RCLCPP_INFO(this->get_logger(), "cube10 added to planning scene");
+
+        // //ALLOWING COLLISION WITH CUBES
+        // moveit_msgs::msg::PlanningScene planning_scene;
+        // planning_scene.is_diff = true;
+        // planning_scene.allowed_collision_matrix.entry_names.push_back("cube1");
+        // moveit_msgs::msg::AllowedCollisionEntry entry;
+        // entry.enabled.resize(2, true);
+        // planning_scene.allowed_collision_matrix.entry_values.push_back(entry);
+        // planning_scene.allowed_collision_matrix.entry_names.push_back("robotiq_85_left_finger_link");
+        // planning_scene.allowed_collision_matrix.entry_names.push_back("robotiq_85_right_finger_link");
+
+        // planning_scene_interface_.applyPlanningScene(planning_scene);
 
         timer_->cancel();  
     }
