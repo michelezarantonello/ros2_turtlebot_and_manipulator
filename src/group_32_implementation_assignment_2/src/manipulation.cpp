@@ -251,8 +251,6 @@ private:
 
         pre_drop_pose_wrt_tag.pose.orientation.w = 1.0;
 
-        
-
         try
         {
             tf_buffer_->transform(pre_drop_pose_wrt_tag, pre_drop_pose_wrt_base, "base_link", tf2::durationFromSec(1.0));
@@ -512,15 +510,7 @@ private:
     {
         arm_group_->clearPathConstraints();
         RCLCPP_INFO(this->get_logger(), "STARTING MOVE TO PRE DROP2 ##############");
-        arm_group_->setStartStateToCurrentState();
-        arm_group_->setNamedTarget("home");
-        bool success = arm_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
-        if (success){
-            RCLCPP_INFO(get_logger(), "returned to home succesfully CHECKPOINT###############################");
-            
-        }else{
-            RCLCPP_ERROR(get_logger(), " failed returned to home CHECKPOINT###############################.");
-        }
+        
         arm_group_->setStartStateToCurrentState();
         arm_group_->setPoseTarget(pre_grasp_pose);
         RCLCPP_INFO(this->get_logger(), "MOVING TO PRE DROP ##############");
@@ -556,17 +546,22 @@ private:
             planning_scene_interface.removeCollisionObjects(object_ids);
         
             RCLCPP_INFO(get_logger(), "Cube10 REMOVED from planning scene");
-            arm_group_->setStartStateToCurrentState();
-            arm_group_->setNamedTarget("home");
-            bool success = arm_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
-            if (success){
-                RCLCPP_INFO(get_logger(), "returned to home succesfully ###############################");
-                
-            }else{
-                RCLCPP_ERROR(get_logger(), " failed returned to home###############################.");
-            }
+            return_home();
         }else{
             RCLCPP_ERROR(get_logger(), "Cube failed drop##########################.");
+        }
+    }
+
+    void return_home()
+    {
+        arm_group_->setStartStateToCurrentState();
+        arm_group_->setNamedTarget("home");
+        bool success = arm_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
+        if (success){
+            RCLCPP_INFO(get_logger(), "returned to home succesfully ###############################");
+                
+        }else{
+            RCLCPP_ERROR(get_logger(), " failed returned to home###############################.");
         }
     }
 
