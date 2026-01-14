@@ -516,7 +516,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "MOVING TO PRE DROP ##############");
         moveit::planning_interface::MoveGroupInterface::Plan my_plan;
 
-        success = arm_group_->plan(my_plan) == moveit::core::MoveItErrorCode::SUCCESS;
+        bool success = arm_group_->plan(my_plan) == moveit::core::MoveItErrorCode::SUCCESS;
         if (success) {
             arm_group_->execute(my_plan); 
             RCLCPP_INFO(this->get_logger(), "MOVING TO PRE DROP ##############");
