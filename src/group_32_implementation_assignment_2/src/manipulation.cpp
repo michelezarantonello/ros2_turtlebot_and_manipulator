@@ -245,9 +245,9 @@ private:
         geometry_msgs::msg::PoseStamped pre_drop_pose_wrt_tag;
         pre_drop_pose_wrt_tag.header.frame_id = "tag36h11:10";
         pre_drop_pose_wrt_tag.header.stamp = this->get_clock()->now();
-        pre_drop_pose_wrt_tag.pose.position.x = 0.13;
-        pre_drop_pose_wrt_tag.pose.position.y = 0.0; 
-        pre_drop_pose_wrt_tag.pose.position.z = 0.22;
+        pre_drop_pose_wrt_tag.pose.position.x = -0.005; // Changed by big
+        pre_drop_pose_wrt_tag.pose.position.y = -0.10; // Changed by big
+        pre_drop_pose_wrt_tag.pose.position.z = 0.20; // Changed by big
 
         pre_drop_pose_wrt_tag.pose.orientation.w = 1.0;
 
@@ -313,7 +313,7 @@ private:
     {
         arm_group_->clearPathConstraints();
         RCLCPP_INFO(this->get_logger(), "STARTING MOVE TO PRE GRASP ##############");
-        moveit_msgs::msg::JointConstraint jc_shoulder_pan;
+        /* moveit_msgs::msg::JointConstraint jc_shoulder_pan;
         moveit_msgs::msg::JointConstraint jc_shoulder_lift;
         jc_shoulder_pan.joint_name = "shoulder_pan_joint";
         jc_shoulder_pan.position = -M_PI/2;
@@ -331,7 +331,7 @@ private:
         constraints.joint_constraints.push_back(jc_shoulder_pan);
         constraints.joint_constraints.push_back(jc_shoulder_lift);
         arm_group_->setPathConstraints(constraints);
-        RCLCPP_INFO(get_logger(), "Constraints setted.");
+        RCLCPP_INFO(get_logger(), "Constraints setted."); */
         arm_group_->setStartStateToCurrentState();
         geometry_msgs::msg::PoseStamped pre_grasp_pose_wrt_tag10;
         pre_grasp_pose_wrt_tag10.header.frame_id = "tag36h11:10";
@@ -546,9 +546,24 @@ private:
             planning_scene_interface.removeCollisionObjects(object_ids);
         
             RCLCPP_INFO(get_logger(), "Cube10 REMOVED from planning scene");
-            return_home();
+            close_gripper3();
         }else{
             RCLCPP_ERROR(get_logger(), "Cube failed drop##########################.");
+        }
+    }
+
+    void close_gripper3()
+    {
+        if (!gripper_group_) return;
+
+        gripper_group_->setStartStateToCurrentState();
+        gripper_group_->setNamedTarget("close");
+        bool success = gripper_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
+        if (success){
+            RCLCPP_INFO(get_logger(), "Gripper closed successfully.");
+            return_home();
+        }else{
+            RCLCPP_ERROR(get_logger(), "Failed to close gripper.");
         }
     }
 
