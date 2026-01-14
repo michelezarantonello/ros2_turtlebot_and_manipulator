@@ -240,6 +240,8 @@ private:
     void move_to_pre_drop()
     {
         arm_group_->clearPathConstraints();
+        arm_group_->setMaxVelocityScalingFactor(0.1); // Slow movement for a safe drop
+        arm_group_->setMaxAccelerationScalingFactor(0.2); // Slow movement for a safe drop
         RCLCPP_INFO(this->get_logger(), "STARTING MOVE TO PRE DROP ##############");
         arm_group_->setStartStateToCurrentState();
         geometry_msgs::msg::PoseStamped pre_drop_pose_wrt_tag;
@@ -279,6 +281,9 @@ private:
             RCLCPP_INFO(this->get_logger(), "MOVING TO PRE DROP ##############");
             arm_group_->clearPoseTargets();
             
+            // Wait for state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
             drop_cube();
         } 
         else{
@@ -303,45 +308,47 @@ private:
             planning_scene_interface.removeCollisionObjects(object_ids);
         
             RCLCPP_INFO(get_logger(), "Cube1 REMOVED from planning scene");
-            move_to_pre_grasp_cube10();
+            // Wait for gripper state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            close_gripper4();
         }else{
             RCLCPP_ERROR(get_logger(), "Cube failed drop##########################.");
+        }
+    }
+
+    void close_gripper4()
+    {
+        if (!gripper_group_) return;
+
+        gripper_group_->setStartStateToCurrentState();
+        gripper_group_->setNamedTarget("close");
+        RCLCPP_INFO(get_logger(), "Gripper attempt to close ###########################");
+        bool success = gripper_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
+        if (success){
+            RCLCPP_INFO(get_logger(), "Gripper closed successfully.");
+            move_to_pre_grasp_cube10();
+        }else{
+            RCLCPP_ERROR(get_logger(), "Failed to close gripper.");
         }
     }
 
     void move_to_pre_grasp_cube10()
     {
         arm_group_->clearPathConstraints();
+        arm_group_->setMaxVelocityScalingFactor(0.3); // Default speed
+        arm_group_->setMaxAccelerationScalingFactor(0.3); // Default acceleration
         RCLCPP_INFO(this->get_logger(), "STARTING MOVE TO PRE GRASP ##############");
-        /* moveit_msgs::msg::JointConstraint jc_shoulder_pan;
-        moveit_msgs::msg::JointConstraint jc_shoulder_lift;
-        jc_shoulder_pan.joint_name = "shoulder_pan_joint";
-        jc_shoulder_pan.position = -M_PI/2;
-        jc_shoulder_pan.tolerance_above = M_PI/180*100;
-        jc_shoulder_pan.tolerance_below = M_PI/180*100;
-        jc_shoulder_pan.weight = 1.0;
-
-        jc_shoulder_lift.joint_name = "shoulder_lift_joint";
-        jc_shoulder_lift.position = -M_PI/2;
-        jc_shoulder_lift.tolerance_above = M_PI/180*40;
-        jc_shoulder_lift.tolerance_below = M_PI/180*25;
-        jc_shoulder_lift.weight = 1.0;
-
-        moveit_msgs::msg::Constraints constraints;
-        constraints.joint_constraints.push_back(jc_shoulder_pan);
-        constraints.joint_constraints.push_back(jc_shoulder_lift);
-        arm_group_->setPathConstraints(constraints);
-        RCLCPP_INFO(get_logger(), "Constraints setted."); */
+        
         arm_group_->setStartStateToCurrentState();
         geometry_msgs::msg::PoseStamped pre_grasp_pose_wrt_tag10;
         pre_grasp_pose_wrt_tag10.header.frame_id = "tag36h11:10";
         pre_grasp_pose_wrt_tag10.header.stamp = rclcpp::Time(0);
-        pre_grasp_pose_wrt_tag10.pose.position.x = -0.008;//br trial and error
+        pre_grasp_pose_wrt_tag10.pose.position.x = -0.006;//br trial and error // Changed by big, prev=-0.008
         pre_grasp_pose_wrt_tag10.pose.position.y = 0.03; 
-        pre_grasp_pose_wrt_tag10.pose.position.z = 0.20;//0.20 
+        pre_grasp_pose_wrt_tag10.pose.position.z = 0.21;//0.20 
 
         pre_grasp_pose_wrt_tag10.pose.orientation.w = 1.0;
-        RCLCPP_INFO(this->get_logger(), "LEEEEEEEEEL ##############");
+        
 
         try
         {
@@ -352,14 +359,14 @@ private:
             RCLCPP_INFO(this->get_logger(), "Could not transform %s to %s: %s", "pre_grasp_pose_wrt_tag10", "pre_grasp_pose10_wrt_base", ex.what());
             return;
         }
-        RCLCPP_INFO(this->get_logger(), "LOOOOOOOOOOOOL ##############");
+        
         pre_grasp_pose10_wrt_base.header.stamp = this->get_clock()->now();
         pre_grasp_pose10_wrt_base.header.frame_id = "base_link";
-        RCLCPP_INFO(this->get_logger(), "GUUUUUUUUULP ##############");
+        
         tf2::Quaternion q;
         q.setRPY(M_PI, 0.0, M_PI / 2.0);
         q.normalize();
-        RCLCPP_INFO(this->get_logger(), "SWAAAAAAG ##############");
+        
 
         pre_grasp_pose10_wrt_base.pose.orientation = tf2::toMsg(q);
         arm_group_->setPoseTarget(pre_grasp_pose10_wrt_base);
@@ -371,12 +378,15 @@ private:
             arm_group_->execute(my_plan); 
             RCLCPP_INFO(this->get_logger(), "SUCCESFULLY MOVED TO PRE GRASP10 ##############");
             arm_group_->clearPoseTargets();
-            open_gripper2();
-            
-            
+
+            // Wait for arm state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+            open_gripper2(); 
         } 
         else{
-                RCLCPP_ERROR(get_logger(), "NOT ABLE TO MOVE TO PRE GRASP10 ##############");
+            RCLCPP_ERROR(get_logger(), "NOT ABLE TO MOVE TO PRE GRASP10 ##############");
+            move_to_pre_grasp_cube10();
         }
     }
 
@@ -386,16 +396,19 @@ private:
 
         gripper_group_->setStartStateToCurrentState();
         gripper_group_->setNamedTarget("open");
+        RCLCPP_INFO(get_logger(), "Gripper attempt to open ###########################");
         bool success = gripper_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
         if (success){
             RCLCPP_INFO(get_logger(), "Gripper opened succesfully");
+
+            // Wait for arm state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             cartesian_descend2();
         }else{
             RCLCPP_ERROR(get_logger(), "Gripper failed opening.");
         }
 
     }
-
     
 
     void cartesian_descend2()
@@ -408,12 +421,12 @@ private:
         arm_group_->setStartStateToCurrentState();
         geometry_msgs::msg::PoseStamped target_pose;
         target_pose = pre_grasp_pose10_wrt_base;
-        target_pose.pose.position.z -= 0.06; // -=0.06
+        target_pose.pose.position.z -= 0.065; // -=0.06  // Changed by big
         waypoints.push_back(target_pose.pose);
 
         moveit_msgs::msg::RobotTrajectory trajectory;
 
-        const double step = 0.05;    
+        const double step = 0.005;    
         const bool avoid_collisions = false;
         double fraction = arm_group_->computeCartesianPath(
             waypoints,
@@ -426,6 +439,8 @@ private:
         if (fraction > 0.80) {
             arm_group_->execute(trajectory);
             RCLCPP_INFO(get_logger(), "Cartesian descend to blue cube executed#################################");
+            // Wait for state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
             attach_cube2();
         } else {
             RCLCPP_ERROR(get_logger(), "Cartesian descend to blue cube failed##################################");
@@ -447,27 +462,46 @@ private:
             "robotiq_85_left_inner_knuckle_link"
             });
         RCLCPP_INFO(get_logger(), "cube10 attached to end-effector");
+        
+        // Wait for state to settle
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
         close_gripper2();
     }
 
     void close_gripper2()
     {
         if (!gripper_group_) return;
-
+        
+        // Wait for gripper state to fully settle before reading current state
+        std::this_thread::sleep_for(std::chrono::milliseconds(800));
 
         gripper_group_->setStartStateToCurrentState(); //enforce bounds to get rid of this error: Joint 'robotiq_85_right_knuckle_joint' from the starting state is outside bounds by: [2.50818e-05 ] should be in the range [-0.8 ], [0 ].
         std::map<std::string, double> gripper_joints;
-        gripper_joints["robotiq_85_left_knuckle_joint"] = 0.08;//0.05 gripper_group_->setNamedTarget("close") do not reach the close goal
+        gripper_joints["robotiq_85_left_knuckle_joint"] = 0.08;//0.05 gripper_group_->setNamedTarget("close") do not reach the close goal // Chaanged by big, prev = 0.08
         gripper_group_->setJointValueTarget(gripper_joints);
-        // gripper_group_->move(); 
-        // RCLCPP_INFO(get_logger(), "Gripper closing maybe###########################");
+        
+        RCLCPP_INFO(get_logger(), "Gripper attempt to close ###########################");
         bool success = gripper_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
         if (success){
             RCLCPP_INFO(get_logger(), "Gripper closed succesfully######################");
-            cartesian_ascend2();
+            
         }else{
             RCLCPP_ERROR(get_logger(), "Gripper failed closing.########################");
+            // Detach cube if gripper failed to close
+            arm_group_->detachObject("cube10");
+            RCLCPP_INFO(get_logger(), " Cube10 DETACHED ########################");
+            moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
+            std::vector<std::string> object_ids;
+            object_ids.push_back("cube10");
+            planning_scene_interface.removeCollisionObjects(object_ids);
+        
+            RCLCPP_INFO(get_logger(), "Cube10 REMOVED from planning scene");
+            // Wait for gripper state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+ 
         }
+        cartesian_ascend2();
     }
 
     void cartesian_ascend2()
@@ -481,12 +515,12 @@ private:
         arm_group_->setStartStateToCurrentState();
         geometry_msgs::msg::PoseStamped target_pose;
         target_pose = pre_grasp_pose10_wrt_base;
-        target_pose.pose.position.z += 0.05;
+        target_pose.pose.position.z += 0.065;    // Changed by big
         waypoints.push_back(target_pose.pose);
 
         moveit_msgs::msg::RobotTrajectory trajectory;
 
-        const double step = 0.05;    
+        const double step = 0.005;    
         const bool avoid_collisions = false;
         RCLCPP_INFO(get_logger(), "Planning frame: %s", arm_group_->getPlanningFrame().c_str());
         double fraction = arm_group_->computeCartesianPath(
@@ -497,9 +531,13 @@ private:
 
         RCLCPP_INFO(get_logger(), "Cartesian path fraction: %.2f", fraction);
 
-        if (fraction > 0.50) {
+        if (fraction > 0.3) {
             arm_group_->execute(trajectory);
             RCLCPP_INFO(get_logger(), "Cartesian ascend executed#########################");
+
+            // Wait for arm to settle after partial trajectory
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
             move_to_pre_drop2();
         } else {
             RCLCPP_ERROR(get_logger(), "Cartesian ascend path failed#########################");
@@ -509,9 +547,51 @@ private:
     void move_to_pre_drop2()
     {
         arm_group_->clearPathConstraints();
+
+        // Wait a bit more to ensure state is updated
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+        arm_group_->setStartStateToCurrentState();
+
+        arm_group_->setMaxVelocityScalingFactor(0.1); // Slow movement for a safe drop
+        arm_group_->setMaxAccelerationScalingFactor(0.2); // Slow movement for a safe drop
+        
         RCLCPP_INFO(this->get_logger(), "STARTING MOVE TO PRE DROP2 ##############");
         
-        arm_group_->setStartStateToCurrentState();
+        moveit_msgs::msg::JointConstraint jc_shoulder_pan;
+        moveit_msgs::msg::JointConstraint jc_shoulder_lift;
+        jc_shoulder_pan.joint_name = "shoulder_pan_joint";
+        jc_shoulder_pan.position = -M_PI/2;
+        jc_shoulder_pan.tolerance_above = M_PI/180*110;
+        jc_shoulder_pan.tolerance_below = M_PI/180*110;
+        jc_shoulder_pan.weight = 1.0;
+
+        jc_shoulder_lift.joint_name = "shoulder_lift_joint";
+        jc_shoulder_lift.position = -M_PI/2;
+        jc_shoulder_lift.tolerance_above = M_PI/180*50;
+        jc_shoulder_lift.tolerance_below = M_PI/180*50;
+        jc_shoulder_lift.weight = 1.0;
+
+        moveit_msgs::msg::OrientationConstraint ocm;
+        ocm.link_name = "tool0";
+        ocm.header.frame_id = "base_link";
+        ocm.orientation.x = 0.707;
+        ocm.orientation.y = 0.0;
+        ocm.orientation.z = 0.0;
+        ocm.orientation.w = 0.707;
+        ocm.absolute_x_axis_tolerance = M_PI/2;
+        ocm.absolute_y_axis_tolerance = M_PI/2;
+        ocm.absolute_z_axis_tolerance = 3.14;
+        ocm.weight = 1.0; 
+
+        moveit_msgs::msg::Constraints constraints;
+        constraints.joint_constraints.push_back(jc_shoulder_pan);
+        constraints.joint_constraints.push_back(jc_shoulder_lift);
+        constraints.orientation_constraints.push_back(ocm);
+        arm_group_->setPathConstraints(constraints);
+
+        RCLCPP_INFO(get_logger(), "Constraints setted.");
+
         arm_group_->setPoseTarget(pre_grasp_pose);
         RCLCPP_INFO(this->get_logger(), "MOVING TO PRE DROP ##############");
         moveit::planning_interface::MoveGroupInterface::Plan my_plan;
@@ -519,13 +599,14 @@ private:
         bool success = arm_group_->plan(my_plan) == moveit::core::MoveItErrorCode::SUCCESS;
         if (success) {
             arm_group_->execute(my_plan); 
-            RCLCPP_INFO(this->get_logger(), "MOVING TO PRE DROP ##############");
+            RCLCPP_INFO(this->get_logger(), "MOVED TO PRE DROP ##############");
             arm_group_->clearPoseTargets();
             
             drop_cube2();
         } 
         else{
-                RCLCPP_ERROR(get_logger(), "NOT ABLE TO MOVE TO PRE DROP ##############");
+            RCLCPP_ERROR(get_logger(), "NOT ABLE TO MOVE TO PRE DROP ##############");
+            drop_cube2();
         }
     }
 
@@ -546,6 +627,8 @@ private:
             planning_scene_interface.removeCollisionObjects(object_ids);
         
             RCLCPP_INFO(get_logger(), "Cube10 REMOVED from planning scene");
+            // Wait for gripper state to settle
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
             close_gripper3();
         }else{
             RCLCPP_ERROR(get_logger(), "Cube failed drop##########################.");
@@ -569,6 +652,9 @@ private:
 
     void return_home()
     {
+        arm_group_->setMaxVelocityScalingFactor(0.5); // Increased speed
+        arm_group_->setMaxAccelerationScalingFactor(0.5); // Increased acceleration
+        arm_group_->clearPathConstraints();
         arm_group_->setStartStateToCurrentState();
         arm_group_->setNamedTarget("home");
         bool success = arm_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
