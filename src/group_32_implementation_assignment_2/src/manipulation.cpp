@@ -30,23 +30,50 @@ public:
         init_timer_ = this->create_wall_timer(std::chrono::milliseconds(500),std::bind(&Manipulation::init_moveit, this));
         tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
         tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
-        
+
+        // Subscriptions to cube color topics 
+        red_subscription_ = this->create_subscription<geometry_msgs::msg::PointStamped>(
+            "/color_detector/red_cube", 10,
+            std::bind(&Manipulation::red_callback, this, std::placeholders::_1)
+        );
+        blue_subscription_ = this->create_subscription<geometry_msgs::msg::PointStamped>(
+            "/color_detector/blue_cube", 10,
+            std::bind(&Manipulation::blue_callback, this, std::placeholders::_1)
+        );
+
    }
 
 
 private:
     rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr subscription_;
+    rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr red_subscription_;
+    rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr blue_subscription_;
+
     std::shared_ptr<moveit::planning_interface::MoveGroupInterface> arm_group_;
     std::shared_ptr<moveit::planning_interface::MoveGroupInterface> gripper_group_;
     rclcpp::TimerBase::SharedPtr init_timer_;
     std::shared_ptr<tf2_ros::TransformListener> tf_listener_{nullptr};
     std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
     moveit::planning_interface::PlanningSceneInterface planning_scene_interface_;
-    bool arm_moved_ = false;
+    bool returned_home = false;
     geometry_msgs::msg::PoseStamped pre_grasp_pose;
     geometry_msgs::msg::PoseStamped pre_drop_pose_wrt_base;
     geometry_msgs::msg::PoseStamped pre_grasp_pose10_wrt_base;
 
+    void red_callback(const geometry_msgs::msg::PointStamped::SharedPtr msg)
+    {
+        if(returned_home) {
+            RCLCPP_INFO(get_logger(), "Red cube position received: [%.3f, %.3f]", 
+                        msg->point.x, msg->point.y);
+        }
+    }
+    void blue_callback(const geometry_msgs::msg::PointStamped::SharedPtr msg)
+    {
+        if(returned_home) {
+            RCLCPP_INFO(get_logger(), "Blue cube position received: [%.3f, %.3f]", 
+                        msg->point.x, msg->point.y);
+        }
+    }
 
     void init_moveit()
     {
@@ -72,7 +99,7 @@ private:
 
     void move_to_pre_grasp(const geometry_msgs::msg::PoseStamped::SharedPtr pre_grasp_pose_msg)
     {    
-        if (!arm_group_ || !gripper_group_ || arm_moved_) return;
+        if (!arm_group_ || !gripper_group_ || returned_home) return;
 
         RCLCPP_INFO(get_logger(), "Received pre-grasp pose, planning motion");
         moveit_msgs::msg::JointConstraint jc_shoulder_pan;
@@ -103,7 +130,6 @@ private:
         bool success = arm_group_->plan(my_plan) == moveit::core::MoveItErrorCode::SUCCESS;
         if (success) {
             arm_group_->execute(my_plan); 
-            arm_moved_ = true;
             arm_group_->clearPoseTargets();
             RCLCPP_INFO(get_logger(), "Motion executed successfully: ir_arm moved to pre grasp pose. Opening gripper...");
             open_gripper();
@@ -664,15 +690,13 @@ private:
         bool success = arm_group_->move() == moveit::core::MoveItErrorCode::SUCCESS;
         if (success){
             RCLCPP_INFO(get_logger(), "returned to home succesfully ###############################");
-                
+            // Enable acquisition of new cube positions
+            returned_home = true;                
         }else{
             RCLCPP_ERROR(get_logger(), " failed returned to home###############################.");
+            return_home();
         }
     }
-
-    
-
-
 
 };
 
