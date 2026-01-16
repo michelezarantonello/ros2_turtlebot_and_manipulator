@@ -120,11 +120,23 @@ def generate_launch_description():
         output='screen'
     )
 
+    color_detector = Node(
+        package='color_detector',
+        executable='color_detector',
+        name='color_detector',
+        parameters=[
+            moveit_config.to_dict(),
+            {'use_sim_time':True}
+        ],
+        output='screen'
+    )
+
     return LaunchDescription([
         SetLaunchConfiguration('use_sim_time', 'true'),
         simulation,
         TimerAction(period=13.0, actions=[camera_and_tags]),
         TimerAction(period=25.0, actions=[collision_objects]),
         TimerAction(period=35.0, actions=[pre_grasp_pose_publisher]),
-        TimerAction(period=49.0, actions=[manipulation])
+        TimerAction(period=49.0, actions=[manipulation]),
+        TimerAction(period=65.0, actions=[color_detector])
     ])

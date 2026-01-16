@@ -13,6 +13,8 @@ class ColorDetector(Node):
    def __init__(self):
       super().__init__('color_detector')
 
+      rclpy.logging.get_logger('ColorDetector').info('Color Detector node started')   
+
       # Create subscriber to RGB camera images
       self.subscription = self.create_subscription(
          Image,
