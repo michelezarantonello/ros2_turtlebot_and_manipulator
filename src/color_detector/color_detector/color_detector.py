@@ -33,6 +33,17 @@ class ColorDetector(Node):
          '/color_detector/blue_cube', 
          10)
 
+      # Store latest centroids
+      self.red_centroid = None
+      self.blue_centroid = None
+      self.latest_frame_id = None
+      self.latest_timestamp = None
+
+      # Create timers to limit publish rate (Publishing continuously causes problems)
+      publish_rate = 1.0  # Hz
+      timer_period = 1.0 / publish_rate
+      self.create_timer(timer_period, self.publish_centroids)
+
    def image_callback(self, msg):
       # Convert ROS Image to OpenCV
       frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
@@ -44,28 +55,13 @@ class ColorDetector(Node):
       red_mask = self.detect_red(hsv)
       blue_mask = self.detect_blue(hsv)
 
-      #Calculating centroids of detected pixels
-      red_centroid = self.mask_centroid(red_mask)
-      blue_centroid = self.mask_centroid(blue_mask)
+      # Calculating centroids of detected pixels
+      self.red_centroid = self.mask_centroid(red_mask)
+      self.blue_centroid = self.mask_centroid(blue_mask)
 
-      # Publish centroids if detected
-      if red_centroid is not None:
-         point = PointStamped()
-         point.header.stamp = self.get_clock().now().to_msg()
-         point.header.frame_id = msg.header.frame_id
-         point.point.x = float(red_centroid[0])
-         point.point.y = float(red_centroid[1])
-         point.point.z = 0.0
-         self.centroid_publisher_red.publish(point)
-
-      if blue_centroid is not None:
-         point = PointStamped()
-         point.header.stamp = self.get_clock().now().to_msg()
-         point.header.frame_id = msg.header.frame_id
-         point.point.x = float(blue_centroid[0])
-         point.point.y = float(blue_centroid[1])
-         point.point.z = 0.0
-         self.centroid_publisher_blue.publish(point)
+      # Store frame metadata for publishing
+      self.latest_frame_id = msg.header.frame_id
+      self.latest_timestamp = self.get_clock().now().to_msg()
 
    def detect_red(self, hsv):
       # Red color thresholds (tuned)
@@ -97,6 +93,33 @@ class ColorDetector(Node):
       cx = int(moments["m10"] / moments["m00"])
       cy = int(moments["m01"] / moments["m00"])
       return (cx, cy)
+
+   def publish_centroids(self):
+      # This method is called periodically by the timer
+      if self.latest_frame_id is None:
+         return
+
+      # Publish red centroid if detected
+      if self.red_centroid is not None:
+         point = PointStamped()
+         point.header.stamp = self.latest_timestamp
+         point.header.frame_id = self.latest_frame_id
+         point.point.x = float(self.red_centroid[0])
+         point.point.y = float(self.red_centroid[1])
+         point.point.z = 0.0
+         self.centroid_publisher_red.publish(point)
+         rclpy.logging.get_logger('ColorDetector').info('Published red centroid, time stamp: %s' % str(self.latest_timestamp.sec))   
+
+      # Publish blue centroid if detected
+      if self.blue_centroid is not None:
+         point = PointStamped()
+         point.header.stamp = self.latest_timestamp
+         point.header.frame_id = self.latest_frame_id
+         point.point.x = float(self.blue_centroid[0])
+         point.point.y = float(self.blue_centroid[1])
+         point.point.z = 0.0
+         self.centroid_publisher_blue.publish(point)
+         rclpy.logging.get_logger('ColorDetector').info('Published blue centroid, time stamp: %s' % str(self.latest_timestamp.sec))
 
 def main(args=None):
       rclpy.init()
